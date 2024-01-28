@@ -16,8 +16,10 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   return new NextResponse(`<!DOCTYPE html><html><head>
     <meta property="eth:nft:If you know, you know." />
-    <meta property="eth:nft:0xd74599812DfaCD2b5217370ABbC7E699Ad27011E" />
-    <meta property="eth:nft:0x1A883A2392FC538Ca3c9cE8adcB14F48E1d14A9D" />
+    <meta property="eth:nft:contract_address" 
+    content="74599812DfaCD2b5217370ABbC7E699Ad27011E" />
+    <meta property="eth:nft:creator_address" 
+	  content="0x1A883A2392FC538Ca3c9cE8adcB14F48E1d14A9D" />
     <meta property="eth:nft:erc721" />
     <meta property="eth:nft:https://media.contextcdn.com/f6468ff03ff397d828d4d7fda4fac1c474ce1976f856190aefe21766d9e10aa7](https://i.ibb.co/T00kX3x/f6468ff03ff397d828d4d7fda4fac1c474ce1976f856190aefe21766d9e10aa7.png" />
     <meta property="eth:nft:live" />
