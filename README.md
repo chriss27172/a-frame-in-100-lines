@@ -1,59 +1,4 @@
-# A Frame in 100 lines (or less)
-
-Farcaster Frames in less than 100 lines, and ready to be deployed to Vercel.
-
-Have fun! ⛵️
-
 ## Files
-
-### `app/page.tsx`
-```tsx
-import { getFrameMetadata } from '@coinbase/onchainkit';
-import type { Metadata } from 'next';
-
-const frameMetadata = getFrameMetadata({
-  buttons: ['Next image'],
-  image: 'https://zizzamia.xyz/park-1.png',
-  post_url: 'https://zizzamia.xyz/api/frame',
-});
-
-export const metadata: Metadata = {
-  title: 'zizzamia.xyz',
-  description: 'LFG',
-  openGraph: {
-    title: 'zizzamia.xyz',
-    description: 'LFG',
-    images: ['https://zizzamia.xyz/park-1.png'],
-  },
-  other: {
-    ...frameMetadata,
-  },
-};
-
-export default function Page() {
-  return (
-    <>
-      <h1>zizzamia.xyz</h1>
-    </>
-  );
-}
-```
-
-### `app/layout.tsx`
-```tsx
-export const viewport = {
-  width: 'device-width',
-  initialScale: 1.0,
-};
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  );
-}
-```
 
 ### `app/api/frame/route.ts`
 ```ts
@@ -70,10 +15,15 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   }
 
   return new NextResponse(`<!DOCTYPE html><html><head>
-    <meta property="fc:frame" content="vNext" />
-    <meta property="fc:frame:image" content="https://zizzamia.xyz/park-2.png" />
-    <meta property="fc:frame:button:1" content="Address: ${accountAddress}" />
-    <meta property="fc:frame:post_url" content="https://zizzamia.xyz/api/frame" />
+    <meta property="eth:nft:If you know, you know." />
+    <meta property="eth:nft:0xd74599812DfaCD2b5217370ABbC7E699Ad27011E" />
+    <meta property="eth:nft:0x1A883A2392FC538Ca3c9cE8adcB14F48E1d14A9D" />
+    <meta property="eth:nft:erc721" />
+    <meta property="eth:nft:https://media.contextcdn.com/f6468ff03ff397d828d4d7fda4fac1c474ce1976f856190aefe21766d9e10aa7" />
+    <meta property="eth:nft:live" />
+    <meta property="eth:nft:mint_count" />
+    <meta property="eth:nft:" />
+    <meta property="nft:base" />
   </head></html>`);
 }
 
